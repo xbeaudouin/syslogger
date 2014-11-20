@@ -1,0 +1,50 @@
+NAME
+     syslogger -- make entries in the system log
+
+SYNOPSIS
+     syslogger [-46Ai] [-h host] [-p pri] [-t tag]
+
+DESCRIPTION
+     The syslogger utility provides a shell command interface to the syslog(3)
+     system log module.
+
+     The following options are available:
+
+     -4      Force syslogger to use IPv4 addresses only.
+
+     -6      Force syslogger to use IPv6 addresses only.
+
+     -A      By default, syslogger tries to send the message to only one 
+             address, if the host has more than one A or AAAA record. If this
+             option is specified, logger tries to send the message to all
+             addresses.
+
+     -i      Log the process id of the logger process with each line.
+
+     -h host
+             Send the message to the remote system host instead of logging it
+             locally.
+
+     -p pri  Enter the message with the specified priority.  The priority may
+             be specified numerically or as a ``facility.level'' pair.  For
+             example, ``-p local3.info'' logs the message(s) as informational
+             level in the local3 facility.  The default is ``user.notice.''
+
+     -t tag  Mark every line in the log with the specified tag.
+
+DIAGNOSTICS
+     The logger utility exits 0 on success, and >0 if an error occurs.
+
+EXAMPLES
+     In httpd.conf (apache 1.x or 2.x) :
+     
+     CustomLog "|/usr/local/bin/syslogger -A -4 -h 192.168.0.1" combined
+
+SEE ALSO
+     syslog(3), syslogd(8)
+
+STANDARDS
+     The logger command is expected to be IEEE Std 1003.2 (``POSIX.2'') com-
+     patible.
+
+

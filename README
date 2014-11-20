@@ -1,0 +1,33 @@
+SYSLOGGER
+---------
+
+What is syslogger ?
+
+This a software that send file into syslog (local or remote).
+This can be used for example to send a pipe like for example apache
+log into a remote system.
+
+Why syslogger ?
+
+Because I wanted a simple releable way to remote log lots of webservers
+to a central point with the possiblity to have a central point of logging
+with the problem of connected stream system (eg mod_sql for apache that
+don't support the remote database is down).
+There is on most Unix OS an utility named logger, but it has some problems
+to use with real time applications : it waits the whole buffer to be
+filed before sending it on syslog. So it is unusable for such applications.
+
+How is developped syslogger ?
+
+It is developped on Mac OS X and FreeBSD, it should work with allmost
+system that have syslog and bsd/unix base.
+
+License of syslogger ?
+
+Simple : Mozilla Public License 1.1 (eg MPL 1.1), but some parts of the
+code are comming from FreeBSD logger that I have adapted to this software.
+
+What else ?
+
+If you find this software please tell me. Send me money (using my paypal 
+account) or anything else.
